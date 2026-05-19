@@ -6,7 +6,7 @@
   let ticking = false;
   const shrinkPoint = () => {
     if (nav.classList.contains('cs-nav')) return 24;
-    return Math.min(220, window.innerHeight * 0.22);
+    return 32;
   };
 
   const updateNav = () => {
