@@ -1,0 +1,439 @@
+@font-face{font-family:Gaz;src:url('./fonts/gaz-blk.otf');font-display:swap}
+@font-face{font-family:GazReg;src:url('./fonts/gaz-reg.otf');font-display:swap}
+@font-face{font-family:ProxReg;src:url('./fonts/pn-reg.otf');font-display:swap}
+@font-face{font-family:ProxLight;src:url('./fonts/pn-light.ttf');font-display:swap}
+@font-face{font-family:ProxThin;src:url('./fonts/pn-thin.otf');font-display:swap}
+
+/* ---------- Base ---------- */
+:root{
+  /* Section background themes (adjust later as needed) */
+  --bg-1:#0e0914;
+  --bg-2:#171020;
+  --bg-3:#110B18;
+  --bg-4:#171020;
+  --text:#f5f5f0;
+  --ink:#2a2a2a;
+  --stroke:#685a7a;
+  --pad:clamp(16px,2vw,32px);
+  --gutter:5%;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  color:var(--text);
+  font-family:ProxLight;
+  line-height:1.6;
+  font-size:1.1rem;
+  background:var(--bg-1);
+}
+
+/* ---------- Small utilities ---------- */
+.flex{display:flex}
+.flex-start{justify-content:flex-start}
+.flex-center{justify-content:center}
+.flex-end{justify-content:flex-end}
+.flex-top{align-items:flex-start}
+.flex-middle{align-items:center}
+.flex-bottom{align-items:flex-end}
+.row{flex-direction:row}
+.col{flex-direction:column}
+.link-block{display:block;color:inherit;text-decoration:none}
+
+/* ---------- Nav (logo shrinks on scroll) ---------- */
+.nav{
+  position:fixed;top:0;left:0;width:100%;
+  padding:10% 7%;
+  transition:height .3s ease,padding .3s ease,background-color .3s ease;
+  z-index:9999;
+}
+
+.logowrapper {display: inline-block; height: auto; transition: width .3s ease; padding: 6px;}
+.logo{height:580px; transition:height .4s ease;}
+
+.nav.shrink{height:96px;padding:32px 32px}
+.nav.shrink .logo{height:66px;}
+
+/* ---------- Case Study Nav (everything shrinks on scroll) ---------- */
+
+.cs-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 84px;
+  background: var(--bg-2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  transition:height .3s ease,padding .3s ease,background-color .3s ease;
+  z-index: 9999;
+}
+
+.cs-btn {
+  height: 32px;
+  padding: 8px 16px;
+  border: 1px solid #252525;
+  border-radius: 24px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  color: var(--ink);
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  transition:height .3s ease,padding .3s ease;
+}
+
+.cs-logo{height:62px;transition:height .3s ease}
+.cs-back{height:24px;transition:height .3s ease}
+.cs-nav.shrink{background:rgba(10,8,14,.9);backdrop-filter:saturate(1.2) blur(6px);height:46px;}
+.cs-nav.shrink .cs-logo{height:36px}
+.cs-nav.shrink .cs-back{height:18px}
+.cs-nav.shrink .cs-btn {height:26px; padding:8px 12px;}
+.cs-nav.shrink .cs-right{gap: 4px;}
+.cs-nav a {line-height: 1rem;}
+
+/* ---------- Type ----------- */
+p{margin:0 0 1rem}
+h1{color:var(--text);font-family:Gaz;font-size:2rem;line-height:1.4;margin:0 0 20px;}
+h2{color:var(--text);font-family:Gaz;font-size:1.2rem;line-height:1.6;margin:0 0 20px}
+h3{color:var(--text);font-family:ProxReg;font-size:1.1rem;line-height:1.4;margin:0 0 12px}
+h3.cta {color:var(--text);font-family:Gaz;font-size:1.8rem;line-height:1.4;margin:0 0 12px}
+
+/* ---------- Case Study Type ----------- */
+h1.cs{color: var(--ink); font-size: 1.6rem; line-height: 36px;} 
+h2.cs{color: var(--ink)}
+
+/* ---------- Lists ---------- */
+ul.list,ul.list-bulb{padding:0 0 0 16px;margin:0}
+ul.list{list-style:disc}
+ul.list-bulb{list-style:"\1F4A1 "; margin-top: 24px;}
+ul.list-bulb li{padding:0 0 14px 8px;}
+li{margin:.35rem 0 .5rem}
+
+
+
+/* ---------- Logo Soup --------- */
+
+.logosoupwrapper {display: flex; flex-wrap: wrap; align-items: center; width:100%; gap: 24px;}
+.logosoup {margin-top: 14px;}
+
+/* ---------- Sections ---------- */
+.section,
+.section-fullwidth{
+  display:flex;flex-direction:row;gap:var(--gutter);
+  padding:74px clamp(20px,15%,140px);
+}
+.section-topbump{padding-top:88px}
+.section-entry{display:flex;flex-direction:row;flex-basis:100%}
+.narrower{flex-basis:72%}
+.bg-1{background:var(--bg-1)}
+.bg-2{background:var(--bg-2)}
+.bg-3{background:var(--bg-3)}
+.bg-4{background:var(--bg-4)}
+
+/* ---------- True-bleed hero split (matched height) ---------- */
+.hero-split{
+  display:flex;
+  align-items:stretch;       /* equal heights */
+  width:100%;
+  min-height:94vh;          /* at least one viewport tall */
+  overflow:hidden;
+}
+.heroimage{
+  flex:1 1 50%;
+  background:url('./imgs/bg-wood.jpg') center/cover no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  /* no fixed height so it can stretch with the sibling */
+}
+.heroimage img{
+  width:70%;
+  max-width:480px;
+  height:auto;
+  border-radius:6px;
+}
+.herowriteup{
+  flex:1 1 50%;
+  background:var(--bg-1);
+  padding:clamp(64px,10vh,160px) clamp(20px,10vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+/* ---------- Case studies ---------- */
+.casestudy{width:100%}
+.casestudy-entry{width:100%;border-radius:6px 6px 0 0;background-size:cover}
+.casestudy-entry-wrap{padding:14px;position:relative;display:flex;height:380px}
+.casestudy-label{background:#f5f5f0;width:100%;height:125px;border-radius:0 0 6px 6px;padding:0 28px;}
+.casestudy-label p{font-size:14px;margin:0;line-height:1.4rem;color:#000;}
+.casestudy-label img{margin-bottom:14px}
+
+.casestudy-highlight-wrap{position:absolute;right:14px;top:14px;width:220px;display:flex;flex-direction:column;align-items:flex-end;gap:3px}
+.casestudy-highlight{background:#fff;font-size:14px;color:#2a2a2a;padding:0 12px;border-radius:999px;height:26px;display:flex;gap:8px}
+.highlight-webby{background-image:url('./imgs/webbybg.png');background-size:cover}
+.highlight-w3{background-image:url('./imgs/w3bg.jpg');background-size:cover}
+
+.casestudy-bg-br{background-image:url('./imgs/casestudy-bg-br.jpg')}
+.casestudy-bg-ncaa{background-image:url('./imgs/casestudy-bg-ncaa.jpg')}
+.casestudy-bg-dot{background-image:url('./imgs/casestudy-bg-dot.jpg')}
+.casestudy-bg-nick{background-image:url('./imgs/casestudy-bg-nick.jpg')}
+
+/* ---------- Cards / skills ---------- */
+.writeup{width:100%}
+.myservices{border:1px solid var(--stroke);border-radius:8px;padding:24px 32px;margin:0 0 14px 0}
+
+/* ---------- A11y niceties ---------- */
+a:focus-visible,button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important}
+}
+
+
+/* Case Study Interior Styles */
+
+/* ----- Body for case study pages ----- */
+body.interior {
+  background: #fff;
+  color: #252525;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Left cluster (back + logo) */
+.cs-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition:gap .3s ease;
+}
+
+/* Right cluster (case study nav buttons) */
+.cs-right {
+  display: flex;
+  gap: 10px;
+  transition:gap .3s;
+}
+
+/* Colorful hover states */
+.cs-btn.blue:hover, .cs-btn.blue-active { background: #37bfe6; color: #252525;}
+.cs-btn.green:hover, .cs-btn.green-active  { background: #38d865; color: #252525;}
+.cs-btn.yellow:hover, .cs-btn.yellow-active { background: #e1da25; color: #252525;}
+.cs-btn.red:hover, .cs-btn.red-active    { background: #eb414c; color: #252525;}
+.cs-btn.orange:hover, .cs-btn.orange-active { background: #ed7831; color: #252525;}
+
+/* ----- Primary column wrapper ----- */
+.cs-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 140px; /* accounts for fixed nav */
+  padding-bottom: 120px;
+}
+
+/* Typography inside case studies */
+.cs-wrapper h1,
+.cs-wrapper h2,
+.cs-wrapper h3 {
+  color: #252525;
+  margin: 0 0 16px;
+}
+
+.cs-wrapper p {
+  margin: 0 0 16px;
+}
+
+.cs-wrapper ul {
+  margin: 0 0 16px 20px;
+}
+
+/* Inline image inside 900px column */
+.cs-wrapper img.inline-img {
+  width: 100%;
+  margin: 24px 0;
+  border-radius: 6px;
+}
+
+/* Wide images up to 1140px boundary */
+.cs-wide {
+  width: 100%;
+  max-width: 1140px;
+  margin: 48px auto;
+}
+
+.cs-wide img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* ----- Responsive adjustments for interior layouts ----- */
+@media (max-width: 900px) {
+  .cs-nav {
+    padding: 0 20px;
+  }
+  .cs-right {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .cs-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  .cs-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .cs-wide {
+    max-width: 100%;
+  }
+}
+
+/* ================================================
+   CASE STUDY — FINAL LAYOUT SYSTEM (Centered)
+   ================================================ */
+
+/* Outer wrapper (full layout width — 1140px) */
+.cs-container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-top: 140px; /* space for fixed nav */
+  padding-bottom: 120px;
+}
+
+/* Inner text column (reading width — 820px) */
+.cs-column {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Float images */
+.float-left {
+  float: left;
+  width: 50%;
+  max-width: 450px;
+  margin: 6px 24px 12px 0;
+  border-radius: 6px;
+}
+
+.float-right {
+  float: right;
+  width: 50%;
+  max-width: 450px;
+  margin: 6px 0 12px 24px;
+  border-radius: 6px;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+  margin: 0 0 2rem 0;
+}
+
+/* Full-width image inside the 1140px wrapper */
+.cs-wide {
+  width: 100%;
+  margin: 48px auto;
+}
+
+.cs-wide img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cs-container {
+    max-width: 92%;
+  }
+  .cs-column {
+    max-width: 100%;
+  }
+  .float-left,
+  .float-right {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 16px 0;
+  }
+}
+
+
+/* ---------- Responsive ---------- */
+/* Desktop down (<=1540px): squeeze padding */
+@media (max-width:1540px){
+  .section,.section-fullwidth{padding:60px 9%}
+  .logo {height:400px;}
+}
+
+/* Tablet (<=1024px): allow wrapping, keep two-up where possible */
+@media (max-width:1224px){
+  .section,.section-fullwidth{flex-wrap:wrap}
+  .narrower{flex-basis:100%}
+  .herowriteup{padding:64px 128px}
+  h1{width:100%}
+
+  /* hero stacks on tablet */
+  .hero-split{flex-direction:column;min-height:auto}
+  .heroimage,.herowriteup{width:100%;flex:none}
+  .heroimage{min-height:700px}
+  
+  /* Logo Padding (Nav) */
+  .nav {padding:4% 18%;}
+  .logo {height:600px;}
+}
+
+/* Mobile (<=768px): single column & smaller chrome */
+@media (max-width:834px){
+  .section,.section-fullwidth{flex-direction:column;gap:24px}
+  .section-entry{flex-direction:column}
+  .heroimage img{width:88%}
+  .casestudy-entry-wrap{height:300px}
+  .nav{height:96px;padding:44px 32px}
+  .nav .shrink {background-color: rgb(255 0 0 / 0.5);}
+  .logo{height:400px}
+  .herowriteup{padding:34px 34px}
+  .heroimage{min-height:500px}
+  
+}
+
+/* ---------- Hero video ---------- */
+.heroimage{ position:relative; }
+.hero-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  z-index:0;
+}
+.heroimage .overlay-content{ position:relative; z-index:1; }
+
+/* ---------- Sound toggle ---------- */
+.sound-btn{
+  position:absolute;
+  left:16px;
+  bottom:16px;
+  z-index:2;
+  background:rgba(0,0,0,.55);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.35);
+  padding:8px 10px;
+  border-radius:999px;
+  font-size:12px;
+  line-height:1;
+  cursor:pointer;
+}
+.sound-btn:focus-visible{ outline:2px solid #fff; outline-offset:2px; }
+
+@media (prefers-reduced-motion: reduce){
+  .hero-video{ display:none; }
+}
