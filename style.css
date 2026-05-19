@@ -38,7 +38,8 @@ body{
   background:var(--bg-1);
   text-rendering:optimizeLegibility;
 }
-img,video{max-width:100%;height:auto}
+img{max-width:100%}
+video{max-width:100%;height:auto}
 
 .flex{display:flex}
 .flex-start{justify-content:flex-start}
@@ -203,10 +204,10 @@ li{margin:.35rem 0 .5rem}
 .casestudy{width:100%}
 .casestudy-entry{width:100%;border-radius:var(--radius-card) var(--radius-card) 0 0;background-size:cover;background-position:center;overflow:hidden}
 .casestudy-entry-wrap{padding:14px;position:relative;display:flex;height:380px;overflow:hidden}
-.casestudy-entry-wrap>img{max-width:100%;max-height:100%;object-fit:contain}
-.casestudy-label{background:var(--surface);width:100%;min-height:125px;border-radius:0 0 var(--radius-card) var(--radius-card);padding:24px 28px;text-align:center}
+.casestudy-entry-wrap>img{max-width:none}
+.casestudy-label{background:var(--surface);width:100%;height:125px;border-radius:0 0 var(--radius-card) var(--radius-card);padding:0 28px;text-align:center}
 .casestudy-label p{font-size:14px;margin:0;line-height:1.4rem;color:#000;max-width:none}
-.casestudy-label img{margin-bottom:14px;max-height:58px;object-fit:contain}
+.casestudy-label img{margin-bottom:14px}
 .casestudy-highlight-wrap{position:absolute;right:14px;top:14px;width:min(220px,calc(100% - 28px));display:flex;flex-direction:column;align-items:flex-end;gap:3px}
 .casestudy-highlight{background:#fff;font-size:14px;color:var(--ink);padding:0 12px;border-radius:999px;height:26px;display:flex;gap:8px;white-space:nowrap}
 .highlight-webby{background-image:url('./imgs/webbybg.png');background-size:cover}
@@ -269,6 +270,7 @@ body.interior a:focus-visible{outline-color:#252525}
   .nav.shrink{height:72px;padding:10px 20px}
   .nav.shrink .logo{height:52px;max-height:52px}
   .casestudy-entry-wrap{height:300px}
+  .casestudy-entry-wrap>img{max-width:100%;max-height:100%;object-fit:contain}
   .casestudy-label{padding:22px 20px}
   .casestudy-highlight-wrap{align-items:flex-start;right:auto;left:14px}
   .logosoupwrapper{gap:18px}
