@@ -19,7 +19,7 @@
   --nb-color-case-study-copy:var(--nb-color-background-section);
   --nb-color-accent-blue:#37bfe6;
   --nb-color-accent-green:#38d865;
-  --nb-color-accent-yellow:#e1da25;
+  --nb-color-accent-yellow:#FAF116;
   --nb-color-accent-red:#eb414c;
   --nb-color-accent-orange:#ed7831;
 
@@ -218,12 +218,14 @@ video{max-width:100%;height:auto}
 .col{flex-direction:column}
 .link-block{display:block;color:inherit;text-decoration:none}
 .cta-button{
-  display:inline-flex;
+  display:flex;
   align-items:center;
   justify-content:center;
-  min-height:44px;
-  margin-top:10px;
-  padding:12px 18px;
+  gap:9px;
+  width:max-content;
+  min-height:50px;
+  margin:18px 0 0 auto;
+  padding:15px 24px;
   border:var(--nb-stroke-width-default) solid var(--accent-yellow);
   border-radius:var(--radius-pill);
   background:var(--accent-yellow);
@@ -234,7 +236,121 @@ video{max-width:100%;height:auto}
   text-decoration:none;
   transition:background-color .2s ease,border-color .2s ease,transform .2s ease;
 }
+.cta-button img{height:14px;width:auto;max-width:none}
 .cta-button:hover{background:var(--accent-green);border-color:var(--accent-green);transform:translateY(-1px)}
+
+html.auth-lock{background:var(--bg-2)}
+html.auth-lock body{
+  min-height:100vh;
+  background:var(--bg-2);
+  color:var(--nb-color-case-study-copy);
+}
+html.auth-lock body>:not(.password-gate){display:none!important}
+.visually-hidden{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  padding:0!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;
+  border:0!important;
+}
+.password-gate{
+  position:relative;
+  min-height:100svh;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:clamp(32px,6vh,148px) var(--nb-space-section-x-mobile);
+  background:var(--bg-2);
+}
+.password-gate-logo{
+  position:absolute;
+  top:clamp(32px,5vw,60px);
+  left:clamp(28px,5vw,64px);
+  width:clamp(72px,7vw,108px);
+  height:auto;
+}
+.password-gate-card{
+  width:min(100%,550px);
+  background:var(--surface);
+  color:var(--nb-color-case-study-copy);
+  border-radius:var(--radius-panel);
+  padding:clamp(36px,5vw,54px);
+  box-shadow:0 18px 48px rgba(0,0,0,.22);
+}
+.password-gate-card h1{
+  color:var(--nb-color-case-study-copy);
+  font-size:clamp(1.8rem,2.2vw,2.25rem);
+  line-height:var(--nb-type-display-desktop-line-height);
+  margin:0 0 28px;
+  max-width:20ch;
+}
+.password-gate-card p{
+  color:var(--nb-color-case-study-copy);
+  max-width:none;
+  margin:0 0 12px;
+}
+.password-gate-form{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:32px;
+}
+.password-gate-prompt{
+  font-family:var(--nb-font-body-strong);
+  margin:0 0 2px;
+}
+.password-gate input{
+  width:100%;
+  height:56px;
+  border:var(--nb-stroke-width-default) solid rgba(104,90,122,.72);
+  border-radius:12px;
+  background:#fff;
+  color:var(--nb-color-case-study-copy);
+  font:inherit;
+  padding:0 16px;
+}
+.password-gate input::placeholder{
+  color:rgba(42,42,42,.35);
+}
+.password-gate button{
+  align-self:flex-end;
+  min-width:124px;
+  height:52px;
+  margin-top:4px;
+  padding:0 24px;
+  border:var(--nb-stroke-width-default) solid var(--accent-yellow);
+  border-radius:var(--radius-pill);
+  background:var(--accent-yellow);
+  color:#252525;
+  font-family:var(--nb-font-body-strong);
+  font-size:var(--nb-type-meta-size);
+  line-height:1;
+  cursor:pointer;
+}
+.password-gate button:hover{background:var(--accent-green);border-color:var(--accent-green)}
+.password-gate button:disabled{cursor:wait;opacity:.68}
+.password-gate-message{
+  min-height:20px;
+  font-size:var(--nb-type-meta-size);
+  line-height:1.4;
+  margin:0;
+}
+.password-gate-contact{
+  margin:34px auto 0;
+  max-width:38ch;
+  text-align:center;
+}
+.password-gate-contact a{
+  color:var(--accent-blue);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.password-gate input:focus-visible,.password-gate button:focus-visible{outline:2px solid rgba(104,90,122,.72);outline-offset:2px}
 
 /* Persistent home logo */
 .nav{
@@ -527,6 +643,11 @@ body.interior a:focus-visible{outline-color:#252525}
   :root{--copy-max:100%}
   .section,.section-fullwidth{padding:var(--nb-space-section-y-mobile) var(--nb-space-section-x-mobile)}
   .site-footer{padding:0 var(--nb-space-section-x-mobile)}
+  .password-gate{align-items:flex-start;padding-top:132px}
+  .password-gate-logo{top:28px;left:24px;width:76px}
+  .password-gate-card{padding:30px 22px}
+  .password-gate-card h1{font-size:var(--nb-type-display-mobile-size);line-height:var(--nb-type-display-mobile-line-height);max-width:20ch}
+  .password-gate button{width:100%}
   .heroimage{min-height:var(--nb-layout-home-hero-compact-media-height)}
   .nav{height:var(--nb-layout-home-hero-compact-media-height)}
   .logo{top:calc(var(--nb-layout-home-hero-compact-media-height) / 2)}

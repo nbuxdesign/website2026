@@ -3,6 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+  <script>
+    (function () {
+      try {
+        if (sessionStorage.getItem('nb-portfolio-access') !== 'granted-v1') {
+          document.documentElement.classList.add('auth-lock');
+        }
+      } catch (e) {
+        document.documentElement.classList.add('auth-lock');
+      }
+    })();
+  </script>
   <title>A Design Portfolio</title>
   <meta name="description" content="UX, product design, systems, and AI-augmented design process by Nick Brunt." />
   <meta property="og:type" content="website" />
@@ -19,7 +30,7 @@
   <meta name="twitter:description" content="UX, product design, systems, and AI-augmented design process by Nick Brunt." />
   <meta name="twitter:image" content="https://nbuxdesign.github.io/website2026/imgs/social-preview.jpg" />
   <meta name="twitter:image:alt" content="Nick Brunt design portfolio preview" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=gate5" />
 </head>
 <body>
   <header class="nav" role="banner">
@@ -177,7 +188,7 @@
           <li>Building the narrative around complex work so people can make decisions</li>
           <li>Turning concepts into polished prototypes, systems, and launch-ready direction</li>
         </ul>
-        <a class="cta-button" href="https://ca.linkedin.com/in/nickbrunt" target="_blank" rel="noopener">Get in touch</a>
+        <a class="cta-button" href="https://ca.linkedin.com/in/nickbrunt" target="_blank" rel="noopener">Get in touch <img src="./imgs/forward_arrow_dark.svg" height="14" alt="" aria-hidden="true" /></a>
       </div>
     </div>
 
@@ -226,6 +237,6 @@
     <p>&copy; 2026 Nick Brunt. All rights reserved.</p>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=gate5"></script>
 </body>
 </html>
