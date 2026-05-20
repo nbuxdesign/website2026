@@ -272,11 +272,12 @@ html.auth-lock body>:not(.password-gate){display:none!important}
   top:clamp(32px,5vw,60px);
   left:clamp(28px,5vw,64px);
   width:clamp(72px,7vw,108px);
+  max-height:64px;
   height:auto;
 }
 .password-gate-card{
   width:min(100%,550px);
-  background:var(--surface);
+  background:#fff;
   color:var(--nb-color-case-study-copy);
   border-radius:var(--radius-panel);
   padding:clamp(36px,5vw,54px);
@@ -286,7 +287,7 @@ html.auth-lock body>:not(.password-gate){display:none!important}
   color:var(--nb-color-case-study-copy);
   font-size:clamp(1.8rem,2.2vw,2.25rem);
   line-height:var(--nb-type-display-desktop-line-height);
-  margin:0 0 28px;
+  margin:0 0 12px;
   max-width:20ch;
 }
 .password-gate-card p{
