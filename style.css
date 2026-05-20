@@ -16,6 +16,7 @@
   --nb-color-border-card:rgba(37,37,37,.15);
   --nb-color-surface-card:#f5f5f0;
   --nb-color-surface-page:#fff;
+  --nb-color-case-study-copy:var(--nb-color-background-section);
   --nb-color-accent-blue:#37bfe6;
   --nb-color-accent-green:#38d865;
   --nb-color-accent-yellow:#e1da25;
@@ -216,6 +217,24 @@ video{max-width:100%;height:auto}
 .row{flex-direction:row}
 .col{flex-direction:column}
 .link-block{display:block;color:inherit;text-decoration:none}
+.cta-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  margin-top:10px;
+  padding:12px 18px;
+  border:var(--nb-stroke-width-default) solid var(--accent-yellow);
+  border-radius:var(--radius-pill);
+  background:var(--accent-yellow);
+  color:#252525;
+  font-family:var(--nb-font-body-strong);
+  font-size:var(--nb-type-meta-size);
+  line-height:1;
+  text-decoration:none;
+  transition:background-color .2s ease,border-color .2s ease,transform .2s ease;
+}
+.cta-button:hover{background:var(--accent-green);border-color:var(--accent-green);transform:translateY(-1px)}
 
 /* Persistent home logo */
 .nav{
@@ -357,7 +376,7 @@ li{margin:.35rem 0 .5rem}
   position:relative;
   flex:1 1 50%;
   min-width:0;
-  background:url('./imgs/bg-wood.jpg') center/cover no-repeat;
+  background:var(--bg-1);
   display:flex;
   justify-content:center;
   align-items:center;
@@ -378,9 +397,11 @@ li{margin:.35rem 0 .5rem}
 .casestudy-entry{width:100%;border-radius:var(--radius-card) var(--radius-card) 0 0;background-size:cover;background-position:center;overflow:hidden}
 .casestudy-entry-wrap{padding:var(--nb-space-card-media-padding);position:relative;display:flex;height:var(--nb-component-card-media-height-desktop);overflow:hidden}
 .casestudy-entry-wrap>img{max-width:none}
-.casestudy-label{background:var(--surface);width:100%;height:var(--nb-component-card-label-height);border-radius:0 0 var(--radius-card) var(--radius-card);padding:0 var(--nb-space-card-padding-x);align-items:flex-start;text-align:left}
-.casestudy-label p{font-size:var(--nb-type-meta-size);margin:0;line-height:var(--nb-type-meta-line-height);color:#000;max-width:none}
+.casestudy-label{position:relative;background:var(--surface);width:100%;height:var(--nb-component-card-label-height);border-radius:0 0 var(--radius-card) var(--radius-card);padding:0 var(--nb-space-card-padding-x);align-items:flex-start;text-align:left}
+.casestudy-label p{font-size:var(--nb-type-meta-size);margin:0;line-height:var(--nb-type-meta-line-height);color:var(--nb-color-case-study-copy);max-width:none}
 .casestudy-label img{margin-bottom:14px}
+.casestudy-read-more{position:absolute;right:var(--nb-space-card-padding-x);bottom:28px;display:inline-flex;align-items:center;gap:7px;color:var(--nb-color-case-study-copy);font-family:var(--nb-font-body-strong);font-size:var(--nb-type-meta-size);line-height:1;white-space:nowrap}
+.casestudy-read-more img{height:14px;width:auto;max-width:none;margin:0}
 .casestudy-highlight-wrap{position:absolute;right:var(--nb-space-card-media-padding);top:var(--nb-space-card-media-padding);width:min(220px,calc(100% - (var(--nb-space-card-media-padding) * 2)));display:flex;flex-direction:column;align-items:flex-end;gap:3px}
 .casestudy-highlight{background:#fff;font-size:var(--nb-type-meta-size);color:var(--ink);padding:0 12px;border-radius:var(--radius-pill);height:var(--nb-component-award-height);display:flex;gap:8px;white-space:nowrap}
 .highlight-webby{background-image:url('./imgs/webbybg.png');background-size:cover}
