@@ -269,8 +269,8 @@ html.auth-lock body>:not(.password-gate){display:none!important}
 }
 .password-gate-logo{
   position:absolute;
-  top:clamp(32px,5vw,60px);
-  left:clamp(28px,5vw,64px);
+  top:30px;
+  left:30px;
   width:clamp(72px,7vw,108px);
   max-height:64px;
   height:auto;
@@ -645,7 +645,7 @@ body.interior a:focus-visible{outline-color:#252525}
   .section,.section-fullwidth{padding:var(--nb-space-section-y-mobile) var(--nb-space-section-x-mobile)}
   .site-footer{padding:0 var(--nb-space-section-x-mobile)}
   .password-gate{align-items:flex-start;padding-top:132px}
-  .password-gate-logo{top:28px;left:24px;width:76px}
+  .password-gate-logo{top:30px;left:30px;width:76px}
   .password-gate-card{padding:30px 22px}
   .password-gate-card h1{font-size:var(--nb-type-display-mobile-size);line-height:var(--nb-type-display-mobile-line-height);max-width:20ch}
   .password-gate button{width:100%}
