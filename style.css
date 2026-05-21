@@ -78,8 +78,7 @@
   --nb-layout-home-hero-logo-center-y:calc(var(--nb-layout-home-hero-min-height) / 2);
   --nb-layout-home-hero-tablet-media-height:clamp(520px,67vw,700px);
   --nb-layout-home-hero-mobile-media-height:500px;
-  --nb-layout-home-hero-compact-media-increase:100px;
-  --nb-layout-home-hero-compact-media-height:calc(var(--nb-layout-home-hero-mobile-media-height) + var(--nb-layout-home-hero-compact-media-increase));
+  --nb-layout-home-hero-compact-media-height:calc(var(--nb-layout-home-hero-mobile-media-height));
   --nb-layout-case-study-container-width:1140px;
   --nb-layout-case-study-column-width:900px;
   --nb-layout-case-study-essay-width:760px;
@@ -107,7 +106,7 @@
   --nb-space-section-y-fluid:7vw;
   --nb-space-section-y-max:88px;
   --nb-space-section-y:clamp(var(--nb-space-section-y-min),var(--nb-space-section-y-fluid),var(--nb-space-section-y-max));
-  --nb-space-section-y-mobile:52px;
+  --nb-space-section-y-mobile:24px;
   --nb-space-section-y-mobile-roomy:calc(var(--nb-space-section-y-mobile) + var(--nb-space-gap-stack));
   --nb-space-section-top-bump:14px;
   --nb-space-gap:clamp(28px,5vw,72px);
