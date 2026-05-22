@@ -45,7 +45,7 @@
     <img class="password-gate-logo" src="./logos/nb_logo.svg" alt="Nick Brunt" />
     <section class="password-gate-card">
       <h1 id="passwordGateTitle">Wait, we should talk about this first...</h1>
-      <p>My work includes client projects and process details, so access is intentionally limited. Sorry.</p>
+      <p>My work includes client projects and process details, so access is intentionally limited. Sorry. If you are working on something cool and would like to chat then let’s <a href="https://ca.linkedin.com/in/nickbrunt" target="_blank" rel="noopener">get in touch!</a></p>
       <form class="password-gate-form">
         <p class="password-gate-prompt">Enter the shared password to continue.</p>
         <label class="visually-hidden" for="portfolioPassword">Password</label>
@@ -53,7 +53,6 @@
         <button type="submit">Continue</button>
         <p class="password-gate-message" role="status" aria-live="polite"></p>
       </form>
-      <p class="password-gate-contact">If you are working on something cool and would like to chat then let’s <a href="https://ca.linkedin.com/in/nickbrunt" target="_blank" rel="noopener">get in touch!</a></p>
     </section>
   `;
 

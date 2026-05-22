@@ -285,13 +285,18 @@ html.auth-lock body>:not(.password-gate){display:none!important}
   color:var(--nb-color-case-study-copy);
   font-size:var(--nb-type-display-size);
   line-height:var(--nb-type-display-desktop-line-height);
-  margin:0 0 12px;
+  margin:0 0 8px;
   max-width:20ch;
 }
 .password-gate-card p{
   color:var(--nb-color-case-study-copy);
   max-width:none;
   margin:0 0 4px;
+}
+.password-gate-card p a{
+  color:var(--nb-color-accent-blue);
+  text-decoration:underline;
+  text-underline-offset:3px;
 }
 .password-gate-form{
   display:flex;
@@ -339,16 +344,7 @@ html.auth-lock body>:not(.password-gate){display:none!important}
   line-height:1.4;
   margin:0;
 }
-.password-gate-contact{
-  margin:34px auto 0;
-  max-width:38ch;
-  text-align:center;
-}
-.password-gate-contact a{
-  color:var(--nb-color-accent-blue);
-  text-decoration:underline;
-  text-underline-offset:3px;
-}
+
 .password-gate input:focus-visible,.password-gate button:focus-visible{outline:2px solid var(--nb-color-border-focus);outline-offset:2px}
 
 /* Persistent home logo */
