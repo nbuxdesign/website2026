@@ -5,6 +5,35 @@
   const ACCESS_VALUE = 'granted-v1';
   const PASSWORD_HASH = '3bef4a8675a87b0f7cedac4320edfdf3be34e585666bee2b59312932d3c86d79';
 
+  const isHomePage = () => Boolean(document.querySelector('.nav'));
+
+  const resetHomeScroll = () => {
+    if (!isHomePage()) return;
+
+    const scrollElement = document.scrollingElement || document.documentElement;
+    const previousScrollBehavior = document.documentElement.style.scrollBehavior;
+    document.documentElement.style.scrollBehavior = 'auto';
+    scrollElement.scrollTop = 0;
+    scrollElement.scrollLeft = 0;
+    document.body.scrollTop = 0;
+    document.body.scrollLeft = 0;
+    window.scrollTo(0, 0);
+    document.documentElement.style.scrollBehavior = previousScrollBehavior;
+  };
+
+  const settleHomeAtTop = () => {
+    resetHomeScroll();
+    window.requestAnimationFrame(resetHomeScroll);
+    window.setTimeout(resetHomeScroll, 120);
+    window.setTimeout(resetHomeScroll, 360);
+  };
+
+  if (isHomePage() && 'scrollRestoration' in window.history) {
+    try {
+      window.history.scrollRestoration = 'manual';
+    } catch (e) {}
+  }
+
   const hasAccess = () => {
     try {
       return sessionStorage.getItem(ACCESS_KEY) === ACCESS_VALUE;
@@ -17,8 +46,12 @@
     try {
       sessionStorage.setItem(ACCESS_KEY, ACCESS_VALUE);
     } catch (e) {}
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
     document.documentElement.classList.remove('auth-lock');
     document.querySelector('.password-gate')?.remove();
+    settleHomeAtTop();
   };
 
   const toHex = (buffer) => Array.from(new Uint8Array(buffer))
@@ -33,6 +66,7 @@
 
   if (hasAccess()) {
     document.documentElement.classList.remove('auth-lock');
+    settleHomeAtTop();
     return;
   }
 
