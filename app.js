@@ -149,6 +149,43 @@
   updateNav();
 })();
 
+// Case-study mobile nav
+(function () {
+  const nav = document.querySelector('.cs-nav');
+  const toggle = nav?.querySelector('.cs-menu-toggle');
+  if (!nav || !toggle) return;
+
+  const mobileQuery = window.matchMedia('(max-width: 900px)');
+  const setOpen = (open) => {
+    nav.classList.toggle('mobile-open', open);
+    document.body.classList.toggle('cs-menu-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', `${open ? 'Close' : 'Open'} case study navigation`);
+  };
+
+  toggle.addEventListener('click', () => {
+    setOpen(!nav.classList.contains('mobile-open'));
+  });
+
+  nav.querySelectorAll('.cs-btn').forEach((link) => {
+    link.addEventListener('click', () => setOpen(false));
+  });
+
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setOpen(false);
+  });
+
+  const closeWhenDesktop = () => {
+    if (!mobileQuery.matches) setOpen(false);
+  };
+
+  if (mobileQuery.addEventListener) {
+    mobileQuery.addEventListener('change', closeWhenDesktop);
+  } else {
+    mobileQuery.addListener(closeWhenDesktop);
+  }
+})();
+
 // Keep motion-sensitive browsers from playing the decorative hero video.
 (function () {
   const video = document.getElementById('heroVideo');
