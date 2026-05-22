@@ -50,7 +50,7 @@
         <p class="password-gate-prompt">Enter the shared password to continue.</p>
         <label class="visually-hidden" for="portfolioPassword">Password</label>
         <input id="portfolioPassword" name="portfolioPassword" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" placeholder="Enter Password..." required />
-        <button type="submit">Continue <img src="./imgs/arrows_forward_dark.svg" height="10" alt="" aria-hidden="true" /></button>
+        <button class="nb-button" type="submit">Continue <img src="./imgs/arrows_forward_dark.svg" height="10" alt="" aria-hidden="true" /></button>
         <p class="password-gate-message" role="status" aria-live="polite"></p>
       </form>
     </section>
@@ -115,32 +115,13 @@
   updateNav();
 })();
 
-// Hero video sound toggle + reduced motion. The current design is silent by default;
-// this safely supports a future #soundToggle without requiring it in the markup.
+// Keep motion-sensitive browsers from playing the decorative hero video.
 (function () {
   const video = document.getElementById('heroVideo');
-  const btn = document.getElementById('soundToggle');
   if (!video) return;
 
   try {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (mq.matches) video.pause();
   } catch (e) {}
-
-  if (!btn) return;
-
-  const enableSound = async () => {
-    try {
-      video.muted = false;
-      await video.play();
-      btn.setAttribute('aria-pressed', 'true');
-      btn.textContent = 'Sound on';
-    } catch (e) {
-      video.muted = true;
-      btn.setAttribute('aria-pressed', 'false');
-      btn.textContent = 'Tap to enable sound';
-    }
-  };
-
-  btn.addEventListener('click', enableSound);
 })();
