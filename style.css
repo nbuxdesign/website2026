@@ -239,6 +239,12 @@ html.auth-lock body>:not(.password-gate){display:none!important}
   white-space:nowrap!important;
   border:0!important;
 }
+.svg-filters{
+  position:absolute;
+  width:0;
+  height:0;
+  overflow:hidden;
+}
 .password-gate{
   position:fixed;
   inset:0;
@@ -360,6 +366,17 @@ html.auth-lock body>:not(.password-gate){display:none!important}
   top:calc(var(--nb-component-nav-case-height) / 2);
   height:var(--nb-component-logo-home-shrink-height);
   max-height:var(--nb-component-logo-home-shrink-height);
+}
+.logo-worm{pointer-events:none}
+.nav:not(.shrink) .logo-worm{
+  filter:url("#nb-logo-worm");
+}
+.nav.shrink .logo-worm{
+  filter:none;
+  pointer-events:auto;
+}
+.nav.shrink .logo-worm:hover{
+  filter:url("#nb-logo-worm");
 }
 
 /* Case-study navigation */
@@ -715,5 +732,6 @@ body.interior a:focus-visible{outline-color:var(--nb-color-text-strong)}
 
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .logo-worm{filter:none!important}
   .hero-video,.contact-video{display:none}
 }
