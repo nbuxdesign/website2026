@@ -26,7 +26,7 @@
     .join('');
 
   const hashPassword = async (password) => {
-    const encoded = new TextEncoder().encode(password);
+    const encoded = new TextEncoder().encode(password.toLowerCase());
     const digest = await window.crypto.subtle.digest('SHA-256', encoded);
     return toHex(digest);
   };
@@ -45,12 +45,12 @@
     <img class="password-gate-logo" src="./logos/nb_logo.svg" alt="Nick Brunt" />
     <section class="password-gate-card">
       <h1 id="passwordGateTitle">Wait, we should talk about this first...</h1>
-      <p>My work includes client projects and process details, so access is intentionally limited. Sorry. If you are working on something cool and would like to chat then let’s <a href="https://ca.linkedin.com/in/nickbrunt" target="_blank" rel="noopener">get in touch!</a></p>
+      <p>My portfolio includes client projects and process details, so access is intentionally limited. My bad. If you're looking to chat you can <a href="https://ca.linkedin.com/in/nickbrunt" target="_blank" rel="noopener">always find me here.</a></p>
       <form class="password-gate-form">
         <p class="password-gate-prompt">Enter the shared password to continue.</p>
         <label class="visually-hidden" for="portfolioPassword">Password</label>
-        <input id="portfolioPassword" name="portfolioPassword" type="password" autocomplete="current-password" placeholder="Enter Password..." required />
-        <button type="submit">Continue</button>
+        <input id="portfolioPassword" name="portfolioPassword" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" placeholder="Enter Password..." required />
+        <button type="submit">Continue <img src="./imgs/arrows_forward_dark.svg" height="10" alt="" aria-hidden="true" /></button>
         <p class="password-gate-message" role="status" aria-live="polite"></p>
       </form>
     </section>
