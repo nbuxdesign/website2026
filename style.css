@@ -150,7 +150,7 @@
   --nb-component-logo-home-shrink-center-offset:31px;
   --nb-component-logo-home-shrink-center-offset-mobile:29px;
   --nb-component-logo-case-height:24px;
-  --nb-component-logo-case-height-tablet:24px;
+  --nb-component-logo-case-height-tablet:20px;
   --nb-component-logo-case-shrink-height:20px;
   --nb-component-back-height:14px;
   --nb-component-back-height-tablet:14px;
@@ -161,7 +161,7 @@
   --nb-component-card-label-height:125px;
   --nb-component-award-height:26px;
   --nb-component-nav-case-height:84px;
-  --nb-component-nav-case-height-mobile:72px;
+  --nb-component-nav-case-height-mobile:64px;
   --nb-component-nav-case-shrink-height:54px;
   --nb-component-nav-pill-height:32px;
   --nb-component-nav-pill-height-shrink:28px;
@@ -428,6 +428,7 @@ html.auth-lock body>:not(.password-gate){display:none!important}
 }
 .cs-logo{height:var(--nb-component-logo-case-height);transition:height .3s ease}
 .cs-back{height:var(--nb-component-back-height);transition:height .3s ease}
+.cs-logo,.cs-back,.cs-menu-icon{display:block}
 .cs-menu-toggle{
   display:none;
   position:relative;
@@ -728,11 +729,11 @@ body.interior a:focus-visible{outline-color:var(--nb-color-text-strong)}
 }
 
 @media (max-width:900px){
-  .cs-nav,.cs-nav.shrink{min-height:var(--nb-component-nav-case-height-mobile);padding:17px 20px;background:var(--nb-color-background-section);backdrop-filter:none}
-  .cs-left{gap:9px}
+  .cs-nav,.cs-nav.shrink{height:var(--nb-component-nav-case-height-mobile);min-height:0;padding:0 20px;align-items:center;background:var(--nb-color-background-section);backdrop-filter:none}
+  .cs-left{height:100%;align-items:center;gap:9px}
   .cs-logo,.cs-nav.shrink .cs-logo{height:var(--nb-component-logo-case-height-tablet)}
   .cs-back,.cs-nav.shrink .cs-back{height:var(--nb-component-back-shrink-height)}
-  .cs-menu-toggle{display:inline-flex;align-items:center;justify-content:center;flex:0 0 var(--nb-component-nav-menu-icon-height);order:2}
+  .cs-menu-toggle{display:inline-flex;align-items:center;justify-content:center;align-self:center;flex:0 0 var(--nb-component-nav-menu-icon-height);order:2}
   .cs-right{
     position:fixed;
     top:var(--nb-component-nav-case-height-mobile);
