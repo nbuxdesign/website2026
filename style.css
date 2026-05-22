@@ -47,6 +47,7 @@
   --nb-color-ibm-end:#a8cdec;
   --nb-color-shadow-mtv:rgba(0,0,0,.32);
   --nb-color-shadow-ibm:rgba(31,112,193,.22);
+  --nb-image-section-background:url('./imgs/section_background.jpg');
 
   /* Typography tokens */
   --nb-font-display:Gaz,Impact,sans-serif;
@@ -230,7 +231,7 @@ video{max-width:100%;height:auto}
 .cta-button img{height:10px;width:auto;max-width:none}
 .cta-button:hover{background:var(--nb-color-accent-green);border-color:var(--nb-color-accent-green);transform:translateY(-1px)}
 
-html.auth-lock{background:var(--nb-color-background-section) url('./imgs/password_background.jpg') center/cover no-repeat fixed}
+html.auth-lock{background:var(--nb-color-background-section) var(--nb-image-section-background) center/cover no-repeat fixed}
 html.auth-lock body{
   min-height:100vh;
   background:transparent;
@@ -258,7 +259,7 @@ html.auth-lock body>:not(.password-gate){display:none!important}
   justify-content:center;
   padding:clamp(32px,6vh,148px) var(--nb-space-section-x-mobile);
   overflow-y:auto;
-  background:var(--nb-color-background-section) url('./imgs/password_background.jpg') center/cover no-repeat;
+  background:var(--nb-color-background-section) var(--nb-image-section-background) center/cover no-repeat;
 }
 .password-gate-logo{
   position:absolute;
@@ -477,9 +478,9 @@ li{margin:.35rem 0 .5rem}
 .work-services{grid-column:5}
 .bg-1{background:var(--nb-color-background-hero)}
 .bg-2{background:var(--nb-color-background-section)}
-.bg-3{background:var(--nb-color-background-alternate)}
+.bg-3,.herowriteup{background:var(--nb-color-background-hero) var(--nb-image-section-background) center/cover no-repeat}
 .bg-4{background:var(--nb-color-background-section)}
-.site-footer{height:88px;background:var(--nb-color-background-footer);color:var(--nb-color-text-inverse);display:flex;align-items:center;justify-content:flex-start;gap:var(--nb-space-footer-gap);padding:0 var(--nb-space-section-x)}
+.site-footer{height:124px;background:var(--nb-color-background-footer);color:var(--nb-color-text-inverse);display:flex;align-items:center;justify-content:flex-start;gap:var(--nb-space-footer-gap);padding:0 var(--nb-space-section-x)}
 .site-footer img{height:32px;width:auto;display:block}
 .site-footer p{margin:0;font-size:var(--nb-type-meta-size);line-height:1.4;color:var(--nb-color-text-inverse-subtle);max-width:none}
 .site-footer.interior-footer{padding:0 clamp(20px,5vw,64px)}
@@ -506,7 +507,6 @@ li{margin:.35rem 0 .5rem}
 .herowriteup{
   flex:1 1 50%;
   min-width:0;
-  background:var(--nb-color-background-hero);
   padding:clamp(72px,10vh,160px) clamp(var(--nb-space-nav-x),8vw,120px);
   display:flex;
   flex-direction:column;
@@ -704,6 +704,7 @@ body.interior a:focus-visible{outline-color:var(--nb-color-text-strong)}
   .section,.section-fullwidth{gap:var(--nb-space-gap-stack-mobile-roomy);padding:var(--nb-space-section-y-mobile-roomy) var(--nb-space-hero-copy-x-mobile)}
   #work{gap:var(--nb-space-gap-stack-mobile-roomy)}
   .site-footer{padding:0 var(--nb-space-section-x-mobile)}
+  .password-gate{align-items:flex-start;padding-top:124px;padding-bottom:32px}
   .password-gate-logo{top:30px;left:30px;width:76px}
   .password-gate-card{padding:var(--nb-space-password-card-padding-mobile)}
   .password-gate-card h1{font-size:var(--nb-type-display-mobile-size);line-height:var(--nb-type-display-mobile-line-height);max-width:20ch}

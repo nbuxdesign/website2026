@@ -96,7 +96,7 @@
   let ticking = false;
   const shrinkPoint = () => {
     if (nav.classList.contains('cs-nav')) return 24;
-    return 32;
+    return 140;
   };
 
   const updateNav = () => {
