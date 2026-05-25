@@ -79,7 +79,7 @@
     <img class="password-gate-logo" src="./logos/nb_logo.svg" alt="Nick Brunt" />
     <section class="password-gate-card">
       <h1 id="passwordGateTitle">Wait, we should talk about this first...</h1>
-      <p>My portfolio includes client projects and process details, so access is intentionally limited. My bad. If you're looking to chat you can <a href="https://ca.linkedin.com/in/nickbrunt" target="_blank" rel="noopener">always find me here.</a></p>
+      <p>My portfolio includes client projects and process details, so access is intentionally limited to private conversation. My bad. If you're looking to get in touch you can <a href="https://ca.linkedin.com/in/nickbrunt" target="_blank" rel="noopener">always find me here.</a></p>
       <form class="password-gate-form">
         <p class="password-gate-prompt">Enter the shared password to continue.</p>
         <label class="visually-hidden" for="portfolioPassword">Password</label>
