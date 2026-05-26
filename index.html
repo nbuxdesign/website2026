@@ -36,12 +36,10 @@
   <svg class="svg-filters" width="0" height="0" aria-hidden="true" focusable="false">
     <defs>
       <filter id="nb-logo-worm" x="-12%" y="-12%" width="124%" height="124%" color-interpolation-filters="sRGB">
-        <feTurbulence type="fractalNoise" baseFrequency="0.01 0.026" numOctaves="2" seed="7" result="worm-noise">
-          <animate attributeName="baseFrequency" dur="2.2s" values="0.01 0.026;0.017 0.038;0.012 0.032;0.01 0.026" repeatCount="indefinite" />
+        <feTurbulence type="fractalNoise" baseFrequency="0.014 0.032" numOctaves="2" seed="7" result="worm-noise">
+          <animate attributeName="baseFrequency" dur="2.86s" values="0.014 0.032;0.017 0.034;0.012 0.03;0.014 0.032" repeatCount="indefinite" />
         </feTurbulence>
-        <feDisplacementMap in="SourceGraphic" in2="worm-noise" scale="6" xChannelSelector="R" yChannelSelector="G">
-          <animate attributeName="scale" dur="2.2s" values="4;8;5;4" repeatCount="indefinite" />
-        </feDisplacementMap>
+        <feDisplacementMap in="SourceGraphic" in2="worm-noise" scale="10" xChannelSelector="R" yChannelSelector="G" />
       </filter>
     </defs>
   </svg>

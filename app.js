@@ -128,9 +128,10 @@
   if (!nav) return;
 
   let ticking = false;
+  const homeMobileQuery = window.matchMedia('(max-width: 834px)');
   const shrinkPoint = () => {
     if (nav.classList.contains('cs-nav')) return 24;
-    return 140;
+    return homeMobileQuery.matches ? 110 : 190;
   };
 
   const updateNav = () => {
